@@ -1,70 +1,71 @@
 [submodule "external/aspnetwebstack"]
 	path = external/aspnetwebstack
-	url = https://github.com/mono/aspnetwebstack.git
+	url = https://github.com/federico-r-figueredo/aspnetwebstack.git
 [submodule "external/Newtonsoft.Json"]
 	path = external/Newtonsoft.Json
-	url = https://github.com/mono/Newtonsoft.Json.git
+	url = https://github.com/federico-r-figueredo/newtonsoft-json.git
 [submodule "external/cecil"]
 	path = external/cecil
-	url = https://github.com/mono/cecil.git
+	url = https://github.com/federico-r-figueredo/cecil.git
 [submodule "external/rx"]
 	path = external/rx
-	url = https://github.com/mono/rx.git
+	url = https://github.com/federico-r-figueredo/rx.git
 	branch = rx-oss-v2.2
 [submodule "external/ikvm"]
 	path = external/ikvm
-	url = https://github.com/mono/ikvm-fork.git
+	url = https://github.com/federico-r-figueredo/ikvm.git
 [submodule "external/ikdasm"]
 	path = external/ikdasm
-	url = https://github.com/mono/ikdasm.git
+	url = https://github.com/federico-r-figueredo/ikdasm.git
 [submodule "external/reference-assemblies"]
 	path = external/binary-reference-assemblies
-	url = https://github.com/mono/reference-assemblies.git
+	url = https://github.com/federico-r-figueredo/reference-assemblies.git
 [submodule "external/nunit-lite"]
 	path = external/nunit-lite
-	url = https://github.com/mono/NUnitLite.git
+	url = https://github.com/federico-r-figueredo/nunit-lite.git
 [submodule "external/nuget-buildtasks"]
 	path = external/nuget-buildtasks
-	url = https://github.com/mono/NuGet.BuildTasks
+	url = https://github.com/federico-r-figueredo/nuget-build-tasks.git
 [submodule "external/cecil-legacy"]
 	path = external/cecil-legacy
-	url = https://github.com/mono/cecil.git
+	url = https://github.com/federico-r-figueredo/cecil.git
 	branch = mono-legacy-0.9.5
 [submodule "external/boringssl"]
 	path = external/boringssl
-	url = https://github.com/mono/boringssl.git
+	url = https://github.com/federico-r-figueredo/boring-ssl.git
 	branch = mono
 [submodule "external/corefx"]
 	path = external/corefx
-	url = https://github.com/mono/corefx.git
+	url = https://github.com/federico-r-figueredo/core-fx.git
 [submodule "external/bockbuild"]
 	path = external/bockbuild
-	url = https://github.com/mono/bockbuild.git
+	url = https://github.com/federico-r-figueredo/bock-build.git
 [submodule "external/linker"]
 	path = external/linker
-	url = https://github.com/mono/linker.git
+	url = https://github.com/federico-r-figueredo/linker.git
 [submodule "external/roslyn-binaries"]
 	path = external/roslyn-binaries
-	url = https://github.com/mono/roslyn-binaries.git
+	url = https://github.com/federico-r-figueredo/roslyn-binaries.git
 [submodule "external/corert"]
 	path = external/corert
-	url = https://github.com/mono/corert.git
+	url = https://github.com/federico-r-figueredo/core-rt.git
 [submodule "external/xunit-binaries"]
 	path = external/xunit-binaries
-	url = https://github.com/mono/xunit-binaries.git
+	url = https://github.com/federico-r-figueredo/xunit-binaries.git
 [submodule "external/api-doc-tools"]
 	path = external/api-doc-tools
-	url = https://github.com/mono/api-doc-tools.git
+	url = https://github.com/federico-r-figueredo/api-doc-tools.git
 [submodule "external/api-snapshot"]
 	path = external/api-snapshot
-	url = https://github.com/mono/api-snapshot.git
+	url = https://github.com/federico-r-figueredo/api-snapshot.git
 [submodule "external/illinker-test-assets"]
 	path = external/illinker-test-assets
-	url = https://github.com/mono/illinker-test-assets.git
+	url = https://github.com/federico-r-figueredo/illinker-test-assets.git
 [submodule "external/llvm-project"]
 	path = external/llvm-project
-	url = https://github.com/dotnet/llvm-project.git
+	url = https://github.com/federico-r-figueredo/llvm-project.git
 	branch = release/6.x
 [submodule "external/bdwgc"]
 	path = external/bdwgc
-	url = https://github.com/Unity-Technologies/bdwgc.git
+	url = https://github.com/federico-r-figueredo/bdwgc.git
+	
