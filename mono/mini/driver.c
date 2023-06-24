@@ -1585,7 +1585,7 @@ mini_usage_jitdeveloper (void)
 		 "    --agent=ASSEMBLY[:ARG] Loads the specific agent assembly and executes its Main method with the given argument before loading the main assembly.\n"
 		 "    --no-x86-stack-align   Don't align stack on x86\n"
 		 "\n"
-		 "The options supported by MONO_DEBUG can also be passed on the command line.\n"
+		 "The options supported by VALHALLA_DEBUG can also be passed on the command line.\n"
 		 "\n"
 		 "Other options:\n" 
 		 "    --graph[=TYPE] METHOD  Draws a graph of the specified method:\n");
@@ -1608,7 +1608,7 @@ static void
 mini_usage (void)
 {
 	fprintf (stdout,
-		"Usage is: mono [options] program [program-options]\n"
+		"Usage is: valhalla [options] program [program-options]\n"
 		"\n"
 		"Development:\n"
 		"    --aot[=<options>]      Compiles the assembly to native code\n"
@@ -1625,7 +1625,7 @@ mini_usage (void)
 		"    --help-devel           Shows more options available to developers\n"
 		"\n"
 		"Runtime:\n"
-		"    --config FILE          Loads FILE as the Mono config\n"
+		"    --config FILE          Loads FILE as the Valhalla config\n"
 		"    --verbose, -v          Increases the verbosity level\n"
 		"    --help, -h             Show usage information\n"
 		"    --version, -V          Show version information\n"
@@ -1636,9 +1636,9 @@ mini_usage (void)
 		"    --attach=OPTIONS       Pass OPTIONS to the attach agent in the runtime.\n"
 		"                           Currently the only supported option is 'disable'.\n"
 		"    --llvm, --nollvm       Controls whenever the runtime uses LLVM to compile code.\n"
-	        "    --gc=[sgen,boehm]      Select SGen or Boehm GC (runs mono or mono-sgen)\n"
+	        "    --gc=[sgen,boehm]      Select SGen or Boehm GC (runs valhalla or valhalla-sgen)\n"
 #ifdef TARGET_OSX
-		"    --arch=[32,64]         Select architecture (runs mono32 or mono64)\n"
+		"    --arch=[32,64]         Select architecture (runs valhalla32 or valhalla64)\n"
 #endif
 #ifdef HOST_WIN32
 	        "    --mixed-mode           Enable mixed-mode image support.\n"
@@ -1863,9 +1863,9 @@ mono_jit_parse_options (int argc, char * argv[])
 			mono_gc_debug_set (argv[i] + 11);
 		} else if (strcmp (argv [i], "--llvm") == 0) {
 #ifndef MONO_ARCH_LLVM_SUPPORTED
-			fprintf (stderr, "Mono Warning: --llvm not supported on this platform.\n");
+			fprintf (stderr, "Valhalla Warning: --llvm not supported on this platform.\n");
 #elif !defined(ENABLE_LLVM)
-			fprintf (stderr, "Mono Warning: --llvm not enabled in this runtime.\n");
+			fprintf (stderr, "Valhalla Warning: --llvm not enabled in this runtime.\n");
 #else
 			mono_use_llvm = TRUE;
 #endif
@@ -1931,7 +1931,7 @@ switch_gc (char* argv[], const char* target_gc)
 
 #ifdef HAVE_EXECVP
 	execvp (path->str, argv);
-	fprintf (stderr, "Error: Failed to switch to %s gc. mono-%s is not installed.\n", target_gc, target_gc);
+	fprintf (stderr, "Error: Failed to switch to %s gc. valhalla-%s is not installed.\n", target_gc, target_gc);
 #else
 	fprintf (stderr, "Error: --gc=<NAME> option not supported on this platform.\n");
 #endif
@@ -2168,7 +2168,7 @@ mono_main (int argc, char* argv[])
 			char *build = mono_get_runtime_build_info ();
 			char *gc_descr;
 
-			g_print ("Mono JIT compiler version %s\nCopyright (C) Novell, Inc, Xamarin Inc and Contributors. www.mono-project.com\n", build);
+			g_print ("Valhalla JIT compiler version 0.0.1\nCopyright (C) Asgard Technologies GmbH www.valhalla-project.com\n");
 			g_free (build);
 			char *info = mono_get_version_info ();
 			g_print (info);
@@ -2456,9 +2456,9 @@ mono_main (int argc, char* argv[])
 #endif
 		} else if (strcmp (argv [i], "--llvm") == 0) {
 #ifndef MONO_ARCH_LLVM_SUPPORTED
-			fprintf (stderr, "Mono Warning: --llvm not supported on this platform.\n");
+			fprintf (stderr, "Valhalla Warning: --llvm not supported on this platform.\n");
 #elif !defined(ENABLE_LLVM)
-			fprintf (stderr, "Mono Warning: --llvm not enabled in this runtime.\n");
+			fprintf (stderr, "Valhalla Warning: --llvm not enabled in this runtime.\n");
 #else
 			mono_use_llvm = TRUE;
 #endif
@@ -2576,7 +2576,7 @@ mono_main (int argc, char* argv[])
 
 #ifdef MONO_CROSS_COMPILE
        if (!mono_compile_aot) {
-		   fprintf (stderr, "This mono runtime is compiled for cross-compiling. Only the --aot option is supported.\n");
+		   fprintf (stderr, "This valhalla runtime is compiled for cross-compiling. Only the --aot option is supported.\n");
 		   exit (1);
        }
 #if TARGET_SIZEOF_VOID_P == 4 && (defined(TARGET_ARM64) || defined(TARGET_AMD64)) && !defined(MONO_ARCH_ILP32)
@@ -2619,7 +2619,7 @@ mono_main (int argc, char* argv[])
 
 	if (action == DO_DEBUGGER) {
 		enable_debugging = TRUE;
-		g_print ("The Mono Debugger is no longer supported.\n");
+		g_print ("The Valhalla Debugger is no longer supported.\n");
 		return 1;
 	} else if (enable_debugging)
 		mono_debug_init (MONO_DEBUG_FORMAT_MONO);
@@ -2725,7 +2725,7 @@ mono_main (int argc, char* argv[])
 			fprintf (stderr, "Corlib not in sync with this runtime: %s\n", error);
 			fprintf (stderr, "Loaded from: %s\n",
 				mono_defaults.corlib? mono_image_get_filename (mono_defaults.corlib): "unknown");
-			fprintf (stderr, "Download a newer corlib or a newer runtime at http://www.mono-project.com/download.\n");
+			fprintf (stderr, "Download a newer corlib or a newer runtime at http://www.valhalla-project.com/download.\n");
 			exit (1);
 		}
 
